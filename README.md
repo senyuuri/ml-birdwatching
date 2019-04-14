@@ -18,6 +18,9 @@ See fast.ai's setup guide https://course.fast.ai/start_gcp.html) if you encounte
 
 n1-highmem-8 (8 vCPUs, 52 GB memory) with 1 x NVIDIA Tesla P4
 
+# Deployment 
+See https://course.fast.ai/deployment_google_app_engine.html#deploy.
+
 ## Useful Commands
 ```
 # monitor GPU usage
