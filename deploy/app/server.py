@@ -7,6 +7,7 @@ from io import BytesIO
 import os
 import sys
 import binascii
+import base64
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
@@ -108,10 +109,10 @@ async def analyze(request):
             j+=1
 
     buf = io.BytesIO()
-    plt.savefig(buf, format='png')
+    plt.savefig(buf, format='png', bbox_inches='tight')
     buf.seek(0)
     
-    return JSONResponse({'result': str(learn.predict(img)[0])})
+    return JSONResponse({'result': base64.b64encode(buf.read()).decode()})
 
 
 def crop_then_save_image(rgb_image, coords):
