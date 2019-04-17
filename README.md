@@ -28,7 +28,12 @@ directly scp from the GCP instance.
 # download the model, rename to `model.pth` 
 # and place it under `deploy/app/models`
 > cd deploy/app/models
-> wget https://www.dropbox.com/s/l6hh874psq27hde/bird-resnet.pth?raw=1 -O `model.pth`
+> ./download.sh
+
+# test locally with docker
+> cd ../..    # go to `deploy` folder
+> docker build . -t birdapp    # build docker image
+> docker run -p 8080:8080 -t birdapp     # run docker image
 
 # deploy to Google App Engine
 > cd deploy
