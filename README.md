@@ -18,8 +18,22 @@ See fast.ai's setup guide https://course.fast.ai/start_gcp.html) if you encounte
 
 n1-highmem-8 (8 vCPUs, 52 GB memory) with 1 x NVIDIA Tesla P4
 
-# Deployment 
-See https://course.fast.ai/deployment_google_app_engine.html#deploy.
+## Deployment 
+> Reference: https://course.fast.ai/deployment_google_app_engine.html#deploy
+
+*The model is not commited to git because it exceeds Github's maximum file size limit.
+A copy of trained bird classification model has been uploaded to DropBox. Or you can
+directly scp from the GCP instance.
+```
+# download the model, rename to `model.pth` 
+# and place it under `deploy/app/models`
+> cd deploy/app/models
+> wget https://www.dropbox.com/s/l6hh874psq27hde/bird-resnet.pth?raw=1 -O `model.pth`
+
+# deploy to Google App Engine
+> cd deploy
+> gcloud app deploy
+```
 
 ## Useful Commands
 ```
