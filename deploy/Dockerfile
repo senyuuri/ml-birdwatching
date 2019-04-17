@@ -1,7 +1,7 @@
-FROM python:3.6-slim-stretch
+FROM python:3.6
 
 RUN apt update
-RUN apt install -y python3-dev gcc libglib2.0-0 libsm6
+RUN apt install -y python3-dev gcc
 
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
