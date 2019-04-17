@@ -1,4 +1,6 @@
 .ipynb_checkpoints
 deploy/pyenv3
+deploy/pyenv3.6
 *.pth
 weights/*
+*DS_Store
